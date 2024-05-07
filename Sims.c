@@ -4,9 +4,11 @@
 #include <string.h>
 
 //Level 1
+void addStudent(void);
 
 //Defining variables
-//=================
+//==================
+
 // Variable to keep track of number of students
 int i = 0;
 // Structure to store the student
@@ -17,6 +19,7 @@ struct sInfo {
     float cgpa;
     int cID[10];
 } st[55];
+
 //=======
 //Level 0
 //=======
@@ -40,9 +43,9 @@ void main()
 	scanf("%d", &choice);
 
         switch (choice) {
-       // case 1:
-       //    add_student();
-       //     break;
+        case 1:
+           addStudent();
+            break;
        // case 2:
        //     find_rl();
        //     break;
@@ -66,4 +69,32 @@ void main()
             break;
         }
     }
+}
+
+//=======
+//Level 1
+//=======
+
+void addStudent () {
+	printf("Add the Students Details\n");
+    	printf("-------------------------\n");
+
+    	printf("Enter the first name of student\n");
+    	scanf("%s", st[i].fname);
+
+    	printf("Enter the last name of student\n");
+    	scanf("%s", st[i].lname);
+    
+	printf("Enter the Roll Number\n");
+    	scanf("%d", &st[i].roll);
+    
+	printf("Enter the CGPA you obtained\n");
+    	scanf("%f", &st[i].cgpa);
+    
+	printf("Enter the course ID of each course\n");
+    	for (int j = 0; j < 5; j++) {
+        	scanf("%d", &st[i].cID[j]);
+    	}
+
+    	i = i + 1;
 }
