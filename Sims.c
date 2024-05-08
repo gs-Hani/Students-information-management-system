@@ -7,6 +7,7 @@
 void addStudent(void);
 void findRl(void);
 void findFn(void);
+void findC(void);
 
 //Defining variables
 //==================
@@ -54,9 +55,9 @@ void main()
         case 3:
             findFn();
             break;
-       // case 4:
-       //     find_c();
-       //     break;
+        case 4:
+            findC();
+            break;
        // case 5:
        //     tot_s();
        //     break;
@@ -137,10 +138,10 @@ void findFn () {
        		if (!strcmp(st[j].fname, a)) {
 			y = j;
 			printf("The Students Details are\n");
-            		printf("The First name is %s\n",st[i].fname);
-            		printf("The Last name is %s\n",st[i].lname);
-            		printf("The Roll Number is %d\n ",st[i].roll);
-            		printf("The CGPA is %f\n",st[i].cgpa);
+            		printf("The First name is %s\n",st[j].fname);
+            		printf("The Last name is %s\n",st[j].lname);
+            		printf("The Roll Number is %d\n ",st[j].roll);
+            		printf("The CGPA is %f\n",st[j].cgpa);
             		printf("Enter the course ID of each course\n");
 			for (int j = 0; j < 5; j++) {
                 		printf("The course ID are %d\n",st[y].cID[j]);
@@ -149,5 +150,31 @@ void findFn () {
         	}		
         	else
             	printf("The First Name not Found\n");
+    	}
+}
+
+// Find students in a course
+void findC() {
+	int id;
+    	printf("Enter the course ID \n");
+    	scanf("%d", &id);
+
+    	int c = 0;
+	int y;
+
+	for (int j = 0; j <= i; j++) {
+        	for (int d = 0; d < 5; d++) {
+            		if (id == st[j].cID[d]) {
+ 				printf("The Students Details are\n");
+               	 		printf("The First name is %s\n",st[j].fname);
+                		printf("The Last name is %s\n",st[j].lname);
+                		printf("The Roll Number is %d\n ",st[j].roll);
+                		printf("The CGPA is %f\n",st[j].cgpa);
+ 				c = 1;
+				break;
+            		}		
+            		else
+                		printf("The First Name not Found\n");
+        	}
     	}
 }
