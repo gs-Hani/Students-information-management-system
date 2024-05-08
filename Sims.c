@@ -6,6 +6,7 @@
 //Level 1
 void addStudent(void);
 void findRl(void);
+void findFn(void);
 
 //Defining variables
 //==================
@@ -50,9 +51,9 @@ void main()
         case 2:
             findRl();
             break;
-       // case 3:
-       //     find_fn();
-       //     break;
+        case 3:
+            findFn();
+            break;
        // case 4:
        //     find_c();
        //     break;
@@ -100,6 +101,7 @@ void addStudent () {
     	i = i + 1;
 }
 
+// Find student by roll number
 void findRl () {
 	int x,y;
 
@@ -119,5 +121,33 @@ void findRl () {
         		}
 			break;	
 		}
+    	}
+}
+
+// Find student by first name
+void findFn () {
+	char a[50];
+	printf("Enter the First Name of the student\n");
+    	scanf("%s", a);
+
+    	int c = 0;
+	int y;
+
+	for (int j = 0; j <= i; j++) {
+       		if (!strcmp(st[j].fname, a)) {
+			y = j;
+			printf("The Students Details are\n");
+            		printf("The First name is %s\n",st[i].fname);
+            		printf("The Last name is %s\n",st[i].lname);
+            		printf("The Roll Number is %d\n ",st[i].roll);
+            		printf("The CGPA is %f\n",st[i].cgpa);
+            		printf("Enter the course ID of each course\n");
+			for (int j = 0; j < 5; j++) {
+                		printf("The course ID are %d\n",st[y].cID[j]);
+            		}
+            		c = 1;
+        	}		
+        	else
+            	printf("The First Name not Found\n");
     	}
 }
