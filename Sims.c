@@ -10,7 +10,7 @@ void findFn(void);
 void findC(void);
 void totS(void);
 void delS(void);
-
+void upS(void);
 //Defining variables
 //==================
 
@@ -66,9 +66,9 @@ void main()
         case 6:
             delS();
             break;
-       // case 7:
-       //     up_s();
-       //     break;
+        case 7:
+            upS();
+            break;
         case 8:
             exit(0);
             break;
@@ -201,4 +201,52 @@ void delS() {
         	}
     	}
     	printf("The Roll Number is removed Successfully\n");
+}
+
+// Update student data
+void upS() {
+ 
+    printf("Enter the roll number to update the entry : ");
+    long int x;
+    scanf("%ld", &x);
+    for (int j = 0; j < i; j++) {
+        if (st[j].roll == x) {
+            printf("1. first name\n"
+                   "2. last name\n"
+                   "3. roll no.\n"
+                   "4. CGPA\n"
+                   "5. courses\n");
+            int z;
+            scanf("%d", &z);
+            switch (z) {
+            case 1:
+                printf("Enter the new "
+                       "first name : \n");
+                scanf("%s", st[j].fname);
+                break;
+            case 2:
+                printf("Enter the new "
+                       "last name : \n");
+                scanf("%s", st[j].lname);
+                break;
+            case 3:
+                printf("Enter the new "
+                       "roll number : \n");
+                scanf("%d", &st[j].roll);
+                break;
+            case 4:
+                printf("Enter the new CGPA : \n");
+                scanf("%f", &st[j].cgpa);
+                break;
+            case 5:
+                printf("Enter the new courses \n");
+                scanf(
+                    "%d%d%d%d%d", &st[j].cID[0],
+                    &st[j].cID[1], &st[j].cID[2],
+                    &st[j].cID[3], &st[j].cID[4]);
+                break;
+            }
+            printf("UPDATED SUCCESSFULLY.\n");
+        }
+    }
 }
