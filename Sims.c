@@ -8,6 +8,7 @@ void addStudent(void);
 void findRl(void);
 void findFn(void);
 void findC(void);
+void totS(void);
 
 //Defining variables
 //==================
@@ -58,9 +59,9 @@ void main()
         case 4:
             findC();
             break;
-       // case 5:
-       //     tot_s();
-       //     break;
+        case 5:
+            totS();
+            break;
        // case 6:
        //     del_s();
        //     break;
@@ -177,4 +178,11 @@ void findC() {
                 		printf("The First Name not Found\n");
         	}
     	}
+}
+
+// Print total number of students
+void totS() {
+    printf("The total number of Student is %d\n",i);
+    printf("\n you can have a max of 50 students\n");
+    printf("you can have %d more students\n",50 - i);
 }
