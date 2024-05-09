@@ -9,6 +9,7 @@ void findRl(void);
 void findFn(void);
 void findC(void);
 void totS(void);
+void delS(void);
 
 //Defining variables
 //==================
@@ -62,9 +63,9 @@ void main()
         case 5:
             totS();
             break;
-       // case 6:
-       //     del_s();
-       //     break;
+        case 6:
+            delS();
+            break;
        // case 7:
        //     up_s();
        //     break;
@@ -185,4 +186,19 @@ void totS() {
     printf("The total number of Student is %d\n",i);
     printf("\n you can have a max of 50 students\n");
     printf("you can have %d more students\n",50 - i);
+}
+
+// Delete student by roll number
+void delS() {
+    	int a;
+    	printf("Enter the Roll Number which you want to delete\n");
+    	scanf("%d", &a);
+    	for (int j = 0; j <= i; j++) {
+        	if (a == st[j].roll) {
+            		for (int k = j; k < 49; k++)
+                		st[k] = st[k + 1];
+            			i--;
+        	}
+    	}
+    	printf("The Roll Number is removed Successfully\n");
 }
